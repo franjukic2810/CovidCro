@@ -10,21 +10,51 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("DANAS")
-                .font(.title)
-                .bold()
-            Spacer()
-                .frame(height: 10)
-            
-            Text("Slučajeva: 3.220")
-            Text("Oporavljenih: 2.210")
-            Text("Preminulih: 113")
+        NavigationView {
+            ScrollView {
+                VStack {
+                    
+                    VStack(alignment: .leading) {
+                        Text("DANAS")
+                            .font(.title)
+                            .bold()
+                        Spacer()
+                            .frame(height: 10)
+                        
+                        Text("Slučajeva: 3.220")
+                        Text("Oporavljenih: 2.210")
+                        Text("Preminulih: 113")
+                    }
+                    .frame(width: 300,height: 300)
+                    .background(Color("card3"))
+                    .cornerRadius(15)
+                    .shadow(color: Color("card3"),radius: 10)
+                    
+                    Spacer()
+                        .frame(height: 40)
+                    
+                    VStack(alignment: .leading) {
+                        Text("MJERE OPREZA")
+                            .font(.title)
+                            .bold()
+                        
+                        Spacer()
+                            .frame(height: 10)
+                        
+                        Text("Distanca od 2 metra")
+                        Text("Pranje ruku")
+                        Text("Nošenje maske")
+                    }
+                    .frame(width: 300,height: 300)
+                    .background(Color("card3"))
+                    .cornerRadius(15)
+                    .shadow(color: Color("card3"),radius: 10)
+                }
+                .padding()
+            }
+           .navigationBarTitle(Text("Danas u Hrvatskoj"))
         }
-        .frame(width: 300,height: 300)
-        .shadow(radius: 10)
-        .background(Color.secondary.opacity(0.3))
-        .cornerRadius(15)
+
     }
 }
 
